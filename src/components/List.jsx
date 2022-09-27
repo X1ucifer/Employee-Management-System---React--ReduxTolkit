@@ -83,7 +83,7 @@ function List() {
                                         width='100%'
                                         autoFocus
                                         placeholder='Search...'
-                                        onClear={() => console.log('closed')}
+                                        onClear={() => setSearch('')}
                                         value={search}
                                     />
                                     <span className="sr-only">Edit</span>
