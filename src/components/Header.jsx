@@ -5,9 +5,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SideBar from './SideBar';
 
 
-const Header = () => {
+const Header = ({activeMenu,setActiveMenu}) => {
 
-    const [activeMenu, setActiveMenu] = useState(true)
+
 
     return (
         <>
@@ -15,7 +15,7 @@ const Header = () => {
 
 
             <div className='sticky top-[0%] z-[99999]'>
-                <nav class="bg-white dark:bg-gray-800  w-full shadow  ">
+                <nav class="bg-[#F8F9FA] dark:bg-gray-800  w-full shadow  ">
                     <div class=" mx-auto px-8">
                         <div class="flex items-center justify-between h-16">
                             <div class="w-full justify-between flex items-center"
@@ -88,7 +88,7 @@ const Header = () => {
             {/* sidebar */}
 
             {activeMenu ? (
-                <div className="w-60 fixed sidebar dark:bg-secondary-dark-bg bg-[#F3F6FC] z-[999999]">
+                <div className="w-60 fixed sidebar dark:bg-secondary-dark-bg bg-[#F3F6FC] z-[999999]  ">
                     <SideBar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
                 </div>
             ) : (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import Header from './components/Header';
 import EmpForm from './components/EmpForm';
 import { Route, Routes } from 'react-router-dom';
@@ -9,16 +9,19 @@ import './App.css';
 
 function App() {
 
-  const activeMenu = true
+  const [activeMenu, setActiveMenu] = useState(true)
+
+
+  // const activeMenu = true
   return (
     <>
 
       <div>
-        <Header />
+        <Header activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
 
 
         <div className={activeMenu
-                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-[100px] w-full overflow-hidden'
+                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-60  overflow-hidden'
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '}>
           <Routes>
             <Route path="/" element={<EmpForm />} />
